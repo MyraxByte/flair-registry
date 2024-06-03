@@ -1,0 +1,53 @@
+{
+  "name": "@flair-sdk/registry",
+  "version": "2.82.3",
+  "private": false,
+  "author": "flair.dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flair-sdk/typescript.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js",
+      "default": "./src/index.js",
+      "types": "./dist/types.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "dist/index.es.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "axios": "*",
+    "ethers": "*"
+  },
+  "peerDependenciesMeta": {
+    "axios": {
+      "optional": true
+    },
+    "ethers": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "ethers": ">=5.5.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.188"
+  }
+}
